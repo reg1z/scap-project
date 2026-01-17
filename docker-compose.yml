@@ -1,0 +1,17 @@
+services:
+  oracle-host:
+    image: oraclelinux:9
+    container_name: oracle-host
+    hostname: oracle-host
+    networks:
+      - scap-network
+    command: /bin/bash -c "while true; do sleep 3600; done"
+    stdin_open: true
+    tty: true
+    environment:
+      - TZ=UTC
+
+networks:
+  scap-network:
+    driver: bridge
+    name: scap-network
