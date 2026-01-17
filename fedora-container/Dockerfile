@@ -1,7 +1,7 @@
 FROM fedora:43
 
 # Install OpenSSH server
-RUN dnf install -y openssh-server passwd && \
+RUN dnf install -y openssh-server ssh passwd openscap-scanner openscap-utils && \
     dnf clean all
 
 # Generate SSH host keys

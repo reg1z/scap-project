@@ -11,6 +11,22 @@ services:
     environment:
       - TZ=UTC
 
+  fedora-scanner:
+    image: fedora:43
+    container_name: fedora-scanner
+    hostname: fedora-scanner
+    networks:
+      - scap-network
+    command: /bin/bash -c "while true; do sleep 3600; done"
+    stdin_open: true
+    tty: true
+    environment:
+      - TZ=UTC
+    volumes:
+      - ./policy:/policy
+    depends_on:
+      - oracle-host
+
 networks:
   scap-network:
     driver: bridge
