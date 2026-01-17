@@ -72,6 +72,12 @@ From this report, we can see that we've missed the mark on MANY individual tests
 
 # Remediation
 
+It's important to note that, depending on the particular SCAP policy, automated remediations run via SSH _might_ completely sever the SSH connection to the remote endpoint.
+
+For the time being, we'll forget about SSH. Let's attach a shell directly to the Oracle Linux 9 host:
+
+From within your host terminal run: `docker exec -it oracle-host /bin/bash`
+
 Remediation during scan:
 To automate remediation of the failures of the scan, just add the `--remediate` tag to the previous scan command.
 
