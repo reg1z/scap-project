@@ -77,3 +77,5 @@ To automate remediation of the failures of the scan, just add the `--remediate` 
 
 Remediation after scan:
 `oscap-ssh xccdf remediate --results remediation-results.xml results.xml`
+
+(To be continued)
